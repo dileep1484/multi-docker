@@ -6,7 +6,7 @@ before_install:
     - docker build -t dileep/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-    - docker run -e CI=true dileep/react-test npm test
+    - docker run -e CI=true dileep/react-test npm run test
 
 after_success:
     - docker build -t dileep/multi-client ./client
