@@ -9,14 +9,14 @@ script:
     - docker run -e CI=true dileep/react-test npm run test
 
 after_success:
-    - docker build -t dileep/multi-client ./client
-    - docker build -t dileep/multi-nginx ./nginx
-    - docker build -t dileep/multi-server ./server
-    - docker build -t dileep/multi-worker ./worker
+    - docker build -t dileep1484/multi-client ./client
+    - docker build -t dileep1484/multi-nginx ./nginx
+    - docker build -t dileep1484/multi-server ./server
+    - docker build -t dileep1484/multi-worker ./worker
     # Log into the docker CLI
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
     #Take all the images and push them to docker hub
-    - docker push dileep/multi-client
-    - docker push dileep/multi-nginx
-    - docker push dileep/multi-server
-    - docker push dileep/multi-worker
+    - docker push dileep1484/multi-client
+    - docker push dileep1484/multi-nginx
+    - docker push dileep1484/multi-server
+    - docker push dileep1484/multi-worker
